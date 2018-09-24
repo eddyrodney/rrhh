@@ -74,7 +74,7 @@
             </a>
           </li>
           <li>
-            <a href="./table ">
+            <a href="./employee">
               <i class="nc-icon nc-badge"></i>
               <p>Candidatos / Empleado</p>
             </a>

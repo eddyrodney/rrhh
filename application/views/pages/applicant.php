@@ -68,13 +68,7 @@
             </a>
           </li>
           <li>
-            <a href="./experience ">
-              <i class="nc-icon nc-glasses-2"></i>
-              <p>Gestión  Exp. Laboral</p>
-            </a>
-          </li>
-          <li>
-            <a href="./table ">
+            <a href="./employee">
               <i class="nc-icon nc-badge"></i>
               <p>Candidatos / Empleado</p>
             </a>
@@ -120,8 +114,6 @@
               <div class="card-body">
                 <form action="<?php base_url();?>applicants/add" method='post'>
 
-
-
                         <div class="row">
                           <div class="col-6 form-group">
                             <span>Datos Generales:</span>
@@ -163,16 +155,16 @@
                             <input type="text" class="form-control" placeholder="Compañia" name="company_name">
 
                            
-                            <input type="number" class="form-control" placeholder="Salario" name="salary">
+                            <input type="number" class="form-control" placeholder="Salario" name="salary_experience">
                           </div>
 
                           <div class="col-6">
                             <span>Fecha de Entrada:</span>
-                            <input type="date" class="form-control" placeholder="Fecha de Entrada" name="stardate">
+                            <input type="date" class="form-control" placeholder="Fecha de Entrada" name="startdate">
                             <span>Fecha de Salida:</span>
                             <input type="date" class="form-control" placeholder="Fecha de Salida" name="enddate">
                             <span>Recomendado por:</span>
-                            <select name="employe_id" id="employe_id" class="form-control"></select>
+                            <input type="text" name="referer" id="referer" class="form-control">
                           </div>
                           
                         </div>
@@ -194,7 +186,7 @@
               <div class="col-md-12" align="center">
                 <div class="list-group" >
                   <?php foreach($data as $n) : ?>
-                    <a href="#" class="list-group-item list-group-item-action"><?= "<b>Posición: </b>". $n->name ." <br/> <b>Salário: </b>". "$".number_format($n->lowestpayment, 2, '.', ',')." | $".number_format($n->highestpayment, 2, '.', ','); ?>
+                    <a href="#" class="list-group-item list-group-item-action"><?= "<b>". $n->fullname ."</b><br/><br/> <i>Datos del Puesto</i> <br/><br/> <b>Titulo :</b>".$n->position_name."<br/><b>En: </b>".$n->company_name." <b> | Departamento: </b>".$n->department_name."<br/><b>Salario al que Aspira: </b>".$n->wishpayment."<br/><br/> <i>Datos del Solicitante</i><br/><br/><b>Entrenado en: </b>".$n->training_name."<br/><b>Recibido en: </b>".$n->training_institution."<br/> <b>Desde: </b>".$n->training_startdate." | ".$n->training_enddate."<br/> <b>Habilidad Principal: </b>".$n->ability_name."<br/><br/> <i> Experiencia Laboral </i> <br/ ><br/> <b>Trabajó en: </b>".$n->job_company." <br/> <b> Como: </b> ".$n->job_title." <br/> <b> Fecha: </b> ".$n->job_startdate." | ".$n->job_enddate." <br/> <br/> <i> Referido por: </i> <br/> <b>".$n->referer."</b>" ?>
                     <?php if($n->state_id == 1) : ?>
                     <div align="right" style="margin-top: -30px;">
                       <label class="switchh" >

@@ -12,7 +12,7 @@
             
             $data = array(
                 'name' => $this->input->post("name"),
-                'secondname' => $this->input->post("secondname"),
+                'second_name' => $this->input->post("second_name"),
                 'lastname' => $this->input->post("lastname"),
                 'second_lastname' => $this->input->post("second_lastname"),
                 'ssn' => $this->input->post("ssn"),
@@ -24,17 +24,25 @@
                 'ability_id' => $this->input->post("ability_id"),
                 'training_id' => $this->input->post("training_id"),
                 'job_title' => $this->input->post("job_title"),
-                'company_name' => $this->input->post("company_name"),
-                'stardate' => $this->input->post("stardate"),
+                'startdate' => $this->input->post("startdate"),
                 'enddate' => $this->input->post("enddate"),
-                'salary' => $this->input->post("salary"),
+                'salary_experience' => $this->input->post("salary_experience"),
+                'company_name' => $this->input->post("company_name"),
+                'referer' => $this->input->post("referer"),
                 'employe_id' => $this->input->post("employe_id"),
                 'state_id' => 1
             );
 
             if($data['name'] != ''){
 
-                $result = $this->applicant_model->insert($data);
+                $applicant_id = $this->applicant_model->insert($data);
+                if($applicant_id){
+                    $experience = $this->applicant_model->insert_experience($data, $applicant_id);
+                }
+                
+                if($experience){
+                  $query =  $this->applicant_model->update($applicant_id, $experience);
+                }
                 header("Location: ".base_url()."applicant");
             }
             else{

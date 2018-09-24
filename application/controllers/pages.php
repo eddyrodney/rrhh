@@ -15,6 +15,9 @@
             $usemodel = $page."_model";
             
             $data['data'] = $this->$usemodel->get_all();
+            if($page == "employee"){
+                $data['applicants'] = $this->applicant_model->get_all_for_employees();
+            }
 
             $this->load->view('templantes/header');
             $this->load->view('pages/'.$page, $data);

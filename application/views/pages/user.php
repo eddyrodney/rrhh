@@ -68,13 +68,7 @@
             </a>
           </li>
           <li>
-            <a href="./experience ">
-              <i class="nc-icon nc-glasses-2"></i>
-              <p>Gestión  Exp. Laboral</p>
-            </a>
-          </li>
-          <li>
-            <a href="./table ">
+            <a href="./employee">
               <i class="nc-icon nc-badge"></i>
               <p>Candidatos / Empleado</p>
             </a>

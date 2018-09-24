@@ -77,6 +77,16 @@ $(document).ready(function() {
           });
     });
 
+    //Habilitar o deshabilitar un aplicante
+    $(".checker").click(function(){
+        var changer_id = $(this).val();
+        $.ajax({
+            method: "POST",
+            url: ""+window.location.protocol+"/marte/applicants/change_state",
+            data: { id: changer_id }
+          });
+    });
+
    
    
    

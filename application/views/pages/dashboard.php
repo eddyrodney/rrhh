@@ -67,13 +67,7 @@
             </a>
           </li>
           <li>
-            <a href="./experience ">
-              <i class="nc-icon nc-glasses-2"></i>
-              <p>Gestión  Exp. Laboral</p>
-            </a>
-          </li>
-          <li>
-            <a href="./table ">
+            <a href="./employee">
               <i class="nc-icon nc-badge"></i>
               <p>Candidatos / Empleado</p>
             </a>
@@ -165,8 +159,8 @@
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">Capacity</p>
-                      <p class="card-title">150GB
+                      <p class="card-category">Idiomas</p>
+                      <p class="card-title"><span id="c_idiomas"></span>
                         <p>
                     </div>
                   </div>
@@ -175,7 +169,6 @@
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-refresh"></i> Update Now
                 </div>
               </div>
             </div>
@@ -186,13 +179,13 @@
                 <div class="row">
                   <div class="col-5 col-md-4">
                     <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-money-coins text-success"></i>
+                      <i class="nc-icon nc-hat-3 text-success"></i>
                     </div>
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">Revenue</p>
-                      <p class="card-title">$ 1,345
+                      <p class="card-category">Capacitaciones</p>
+                      <p class="card-title"><span id="c_capacitaciones"></span>
                         <p>
                     </div>
                   </div>
@@ -201,7 +194,6 @@
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-calendar-o"></i> Last day
                 </div>
               </div>
             </div>
@@ -212,13 +204,13 @@
                 <div class="row">
                   <div class="col-5 col-md-4">
                     <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-vector text-danger"></i>
+                      <i class="nc-icon nc-shop text-danger"></i>
                     </div>
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">Errors</p>
-                      <p class="card-title">23
+                      <p class="card-category">Compañias</p>
+                      <p class="card-title"><span id="c_companias"></span>
                         <p>
                     </div>
                   </div>
@@ -227,7 +219,6 @@
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-clock-o"></i> In the last hour
                 </div>
               </div>
             </div>
@@ -238,13 +229,13 @@
                 <div class="row">
                   <div class="col-5 col-md-4">
                     <div class="icon-big text-center icon-warning">
-                      <i class="nc-icon nc-favourite-28 text-primary"></i>
+                      <i class="nc-icon nc-single-02 text-primary"></i>
                     </div>
                   </div>
                   <div class="col-7 col-md-8">
                     <div class="numbers">
-                      <p class="card-category">Followers</p>
-                      <p class="card-title">+45K
+                      <p class="card-category">Candidatos</p>
+                      <p class="card-title"><span id="c_candidatos"></span>
                         <p>
                     </div>
                   </div>
@@ -253,7 +244,6 @@
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-refresh"></i> Update now
                 </div>
               </div>
             </div>
@@ -263,23 +253,42 @@
           <div class="col-md-12">
             <div class="card ">
               <div class="card-header ">
-                <h5 class="card-title">Users Behavior</h5>
-                <p class="card-category">24 Hours performance</p>
+                <h5 class="card-title">Buscar Candidato</h5>
+                <p class="card-category">Consulta por Criterio</p>
               </div>
               <div class="card-body ">
-                <canvas id=chartHours width="400" height="100"></canvas>
+                <input type="text" id="buscador" class="form-control" placeholder="Escriba el valor del Criterio">
+                <select id="criterio" class="form-control">
+                  <option value="1">Nombre</option>
+                  <option value="2">Puesto al que Aplica</option>
+                  <option value="3">Empresa</option>
+                  <option value="4">Fecha</option>
+                </select>
+                <table class="table table-striped" id="tabla">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Puesto al que Aplica</th>
+                      <th scope="col">Empresa</th>
+                      <th scope="col">Fecha de Aplicación</th>
+                    </tr>
+                  </thead>
+                  <tbody id="datos_encontrados">
+                    
+                  </tbody>
+                </table>
               </div>
               <div class="card-footer ">
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-history"></i> Updated 3 minutes ago
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-4">
+          <!-- <div class="col-md-4">
             <div class="card ">
               <div class="card-header ">
                 <h5 class="card-title">Email Statistics</h5>
@@ -300,29 +309,46 @@
                   <i class="fa fa-calendar"></i> Number of emails sent
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="col-md-8">
             <div class="card card-chart">
               <div class="card-header">
-                <h5 class="card-title">NASDAQ: AAPL</h5>
-                <p class="card-category">Line Chart with Points</p>
+                <h5 class="card-title">Lista de Empleados de Nuevo Ingreso</h5>
+                <p class="card-category">Ordenados por Fechas</p>
               </div>
               <div class="card-body">
-                <canvas id="speedChart" width="400" height="100"></canvas>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Compañia</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   <?php foreach($data as $n) : ?>
+                    <tr>
+                      <th scope="row"><?=$n->id;?></th>
+                      <td><?=$n->fullname;?></td>
+                      <td><?=$n->name;?></td>
+                    </tr>
+                  </tbody>
+                  <?php endforeach; ?>
+                </table>
               </div>
               <div class="card-footer">
                 <div class="chart-legend">
-                  <i class="fa fa-circle text-info"></i> Tesla Model S
-                  <i class="fa fa-circle text-warning"></i> BMW 5 Series
+                  <i class="fa fa-circle text-info"></i><span id="c_empleados"></span> Empleados
                 </div>
                 <hr/>
                 <div class="card-stats">
-                  <i class="fa fa-check"></i> Data information certified
+                  <!-- <i class="fa fa-check"></i> Data information certified -->
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <script src="<?php echo base_url(); ?>assets/js/dashboard-event-handler.js"></script>
      

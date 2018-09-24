@@ -68,13 +68,7 @@
             </a>
           </li>
           <li>
-            <a href="./experience ">
-              <i class="nc-icon nc-glasses-2"></i>
-              <p>Gestión  Exp. Laboral</p>
-            </a>
-          </li>
-          <li>
-            <a href="./table ">
+            <a href="./employee">
               <i class="nc-icon nc-badge"></i>
               <p>Candidatos / Empleado</p>
             </a>
@@ -145,7 +139,7 @@
               <div class="col-md-12" align="center">
                 <div class="list-group" >
                   <?php foreach($data as $n) : ?>
-                    <a href="#" class="list-group-item list-group-item-action"><?="<b>Entrenamiento:</b> ". $n->title. " | <b>En:</b> " . $n->institution . " </br> <b>Desde:</b> ". $n->startdate . " | <b>Hasta:</b> " . $n->enddate; ?>
+                    <a href="#" class="list-group-item list-group-item-action"><?="<b>Entrenamiento:</b> ". $n->name. " | <b>En:</b> " . $n->institution . " </br> <b>Desde:</b> ". $n->startdate . " | <b>Hasta:</b> " . $n->enddate; ?>
                     <?php if($n->state_id == 1) : ?>
                   <!--  <div align="right" style="margin-top: -30px;">
                       <label class="switchh" >
