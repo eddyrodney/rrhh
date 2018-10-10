@@ -4,7 +4,7 @@
         
         public function insert($data){
             $query = array(
-                        'title' => strtoupper($data['title']),
+                        'name' => strtoupper($data['title']),
                         'details' => strtoupper($data['details']),
                         'startdate' => $data['startdate'],
                         'enddate' => $data['enddate'],

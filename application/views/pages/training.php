@@ -118,8 +118,8 @@
                       <div class="form-group">
                         <input type="text" class="form-control" placeholder="Título" name="title" required>
                         <textarea name="details" id="" cols="30" rows="10" class="form-control" placeholder="Descripción"></textarea>Fecha de Inicio
-                        <input type="date" class="form-control" placeholder="Fecha de Inicio" name="startdate" required>Fecha Fin
-                        <input type="date" class="form-control" placeholder="Fecha Fin" name="enddate" required>
+                        <input type="date" class="form-control" placeholder="Fecha de Inicio" name="startdate" id="startdate" required>Fecha Fin
+                        <input type="date" class="form-control" placeholder="Fecha Fin" name="enddate" id="enddate" required>
                         <input type="text" class="form-control" placeholder="Institución" name="institution" required>
                         <select name="skill_lvl_id" class="form-control">
                             <option value="1">GRADO</option>
@@ -141,7 +141,7 @@
                   <?php foreach($data as $n) : ?>
                     <a href="#" class="list-group-item list-group-item-action"><?="<b>Entrenamiento:</b> ". $n->name. " | <b>En:</b> " . $n->institution . " </br> <b>Desde:</b> ". $n->startdate . " | <b>Hasta:</b> " . $n->enddate; ?>
                     <?php if($n->state_id == 1) : ?>
-                  <!--  <div align="right" style="margin-top: -30px;">
+                    <div align="right" style="margin-top: -30px;">
                       <label class="switchh" >
                         <input type="checkbox" class="checker" value="<?= $n->id ?>" checked>
                         <span class="sliderr"></span>
@@ -153,7 +153,7 @@
                         <input type="checkbox" class="checker" value="<?= $n->id ?>">
                         <span class="sliderr"></span>
                       </label>
-                    </div> -->
+                    </div>
                     <?php endif; ?>
                     </a>                   
                   <?php endforeach; ?>
@@ -163,4 +163,5 @@
         </div>
       </div>
 
-      <script src="<?php echo base_url(); ?>assets/js/training-event-handler.js"></script>
+      <script src="<?php echo base_url(); ?>assets/js/trainings-event-handler.js"></script>
+      <script src="<?php echo base_url(); ?>assets/js/moment-with-locales.js"></script>

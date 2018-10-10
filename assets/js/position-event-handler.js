@@ -1,4 +1,7 @@
-$(document).ready(function() {
+$(document).ready(function($) {
+
+
+    $('.salario').mask('000000.00', {reverse: false});
 
     //Llamada para completar las compañias
     $.ajax({

@@ -1,4 +1,18 @@
-$(document).ready(function() {
+$(document).ready(function($) {
+
+    $('#ssn').mask("000-0000000-0");
+    $('.salario').mask('000000.00', {reverse: false});
+
+    //Comparador de fechas
+    $("#enddate").change(function(){
+        var date = moment($("#startdate").val());
+        var now = moment($("#enddate").val());
+
+        if (now < date) {
+            alert("La fecha de salida no concuerda con la fecha de entrada");
+            $("#enddate").val("");
+        }
+    });
 
     //Llamada para completar las posiciones
     $.ajax({
@@ -87,8 +101,51 @@ $(document).ready(function() {
           });
     });
 
-   
-   
-   
-   
+    
+    $("#ssn").focusout(function(){
+        var validador = valida_cedula($("#ssn").val());
+        switch(validador){
+            case 0:
+                alert("Cédula Inválida");
+            break;
+            case 1:
+                alert("Cédula Válida");
+            break;
+            default:
+                alert("Cantidad de Caracteres Inválida");
+
+         }
+    });
+
+
+    function valida_cedula(ced) {  
+	    var c = ced.replace(/-/g,'');  
+	    var cedula = c.substr(0, c.length - 1);  
+	    var verificador = c.substr(c.length - 1, 1);  
+	    var suma = 0;  
+		var cedulaValida = 0;
+	    if(ced.length < 11) { return false; }  
+	    for (i=0; i < cedula.length; i++) {  
+	        mod = "";  
+	         if((i % 2) == 0){mod = 1} else {mod = 2}  
+	         res = cedula.substr(i,1) * mod;  
+	         if (res > 9) {  
+	              res = res.toString();  
+	              uno = res.substr(0,1);  
+	              dos = res.substr(1,1);  
+	              res = eval(uno) + eval(dos);  
+	         }  
+	         suma += eval(res);  
+	    }  
+	    el_numero = (10 - (suma % 10)) % 10;  
+	    if (el_numero == verificador && cedula.substr(0,3) != "000") {  
+	      cedulaValida = 1;
+	    }  
+	    else   {  
+	     cedulaValida = 0;
+	    }  
+		return cedulaValida;
+    }
+    
+  
 });

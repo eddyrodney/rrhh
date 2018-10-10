@@ -117,8 +117,8 @@
                     <div class="col-md-5 pr-1">
                       <div class="form-group">
                         <input type="text" class="form-control" placeholder="Nombre del puesto" name="name" required>
-                        <input type="number" class="form-control" placeholder="Pago Mínimo" name="lowestpayment" min="0" max="9999999.99" required>
-                        <input type="number" class="form-control" placeholder="Pago Máximo" name="highestpayment" min="0" max="9999999.99" required>Nivel de Riesgo:
+                        <input type="text" class="form-control salario" placeholder="Pago Mínimo" name="lowestpayment" min="0" max="9999999.99" required>
+                        <input type="text" class="form-control salario" placeholder="Pago Máximo" name="highestpayment" min="0" max="9999999.99" required>Nivel de Riesgo:
                         <select name="risk_id" id="risk_id" class="form-control" required></select>Compañia:
                         <select name="company_id" id="company_id" class="form-control" required>
                           <option> </option>
@@ -159,4 +159,6 @@
         </div>
       </div>
 
+      <script src="<?php echo base_url(); ?>assets/js/plugins/jquery.mask.min.js"></script>
+      <script src="<?php echo base_url(); ?>assets/js/moment-with-locales.js"></script>
       <script src="<?php echo base_url(); ?>assets/js/position-event-handler.js"></script>

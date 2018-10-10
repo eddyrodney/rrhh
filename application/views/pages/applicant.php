@@ -121,7 +121,7 @@
                             <input type="text" class="form-control" placeholder="Segundo Nombre" name="second_name">
                             <input type="text" class="form-control" placeholder="Apellido" name="lastname" required>
                             <input type="text" class="form-control" placeholder="Segundo Apellido" name="second_lastname">
-                            <input type="text" class="form-control" placeholder="Identificación" name="ssn" required>
+                            <input type="text" class="form-control" placeholder="Identificación" name="ssn" id="ssn" required>
                           </div>
                           
                           <div class="col-6 form-group">
@@ -129,8 +129,8 @@
                             <select name="position_id" id="position_id" class="form-control" required></select>Empresa:
                             <select name="company_id" id="company_id" class="form-control blocked" ></select>Departamento:
                             <select name="department_id" id="department_id" class="form-control blocked" ></select>
-                            <label for="Payments">Salario del Puesto:</label><span id="payment" class="form-control"><input type="text" class="form-control" placeholder="Salario al que Aspira" name="salary"></span>
-                            <input type="text" class="form-control" placeholder="Salario al que Aspira" name="salary">
+                            <label for="Payments">Salario del Puesto:</label><span id="payment" class="form-control"><input type="text" class="form-control salario" placeholder="Salario al que Aspira" name="salary"></span>
+                            <input type="text" class="form-control salario" placeholder="Salario al que Aspira" name="salary">
                           </div>
                         </div>
 
@@ -155,14 +155,14 @@
                             <input type="text" class="form-control" placeholder="Compañia" name="company_name">
 
                            
-                            <input type="number" class="form-control" placeholder="Salario" name="salary_experience">
+                            <input type="text" class="form-control salario" placeholder="Salario" name="salary_experience">
                           </div>
 
                           <div class="col-6">
                             <span>Fecha de Entrada:</span>
-                            <input type="date" class="form-control" placeholder="Fecha de Entrada" name="startdate">
+                            <input type="date" class="form-control" placeholder="Fecha de Entrada" name="startdate" id="startdate">
                             <span>Fecha de Salida:</span>
-                            <input type="date" class="form-control" placeholder="Fecha de Salida" name="enddate">
+                            <input type="date" class="form-control" placeholder="Fecha de Salida" name="enddate" id="enddate">
                             <span>Recomendado por:</span>
                             <input type="text" name="referer" id="referer" class="form-control">
                           </div>
@@ -210,4 +210,7 @@
         </div>
       </div>
 
+
+      <script src="<?php echo base_url(); ?>assets/js/plugins/jquery.mask.min.js"></script>
+      <script src="<?php echo base_url(); ?>assets/js/moment-with-locales.js"></script>
       <script src="<?php echo base_url(); ?>assets/js/applicant-event-handler.js"></script>

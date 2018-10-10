@@ -339,7 +339,10 @@
               </div>
               <div class="card-footer">
                 <div class="chart-legend">
-                  <i class="fa fa-circle text-info"></i><span id="c_empleados"></span> Empleados
+                  <i class="fa fa-circle text-info"></i><span id="c_empleados"></span> Empleados <br/>
+ 
+                    <a href="<?php base_url();?>report_maker/employees_report" id="exportar" class="btn btn-dark" target="_blank">Exportar a PDF</a>
+           
                 </div>
                 <hr/>
                 <div class="card-stats">
